@@ -17,32 +17,3 @@ var persone = [
   ]
 
 console.log(raggruppa_nascita(persone))
-
-//   {
-//     Vinci: [
-//       {
-//         nome: 'Leonardo da Vinci',
-//         annonascita: 1452,
-//         luogonascita: 'Vinci'
-//       }
-//     ],
-//     Firenze: [
-//       {
-//         nome: 'Pietro del Donzello',
-//         annonascita: 1452,
-//         luogonascita: 'Firenze'
-//       },
-//       {
-//         nome: 'Davide Ghirlandaio',
-//         annonascita: 1452,
-//         luogonascita: 'Firenze'
-//       }
-//     ],
-//     Pisa: [
-//       {
-//         nome: 'Leonardo Fibonacci',
-//         annonascita: 1170,
-//         luogonascita: 'Pisa'
-//       }
-//     ]
-//   }

@@ -10,15 +10,12 @@ per 2, moltiplicazione per 2
 
 function MoltiplicazioneEgizia(a, b){
     let r = 0;
-
-    if (b % 2 != 0){
+    if(b % 2 != 0){
         b++
         r = -a;
     }
-    
-    for(let i = 0; i < b / 2; i++)r += a * 2;
-
+    for(let i = 0; i < b / 2; i++) r += a * 2;
     return r;
 }
 
-console.log(MoltiplicazioneEgizia(293, 541));
+console.log(MoltiplicazioneEgizia(4, 5));

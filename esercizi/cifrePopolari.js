@@ -1,14 +1,16 @@
+function mySort(a, b){
+    if(a.occ > b.occ) return 1;
+    if(a.occ < b.occ) return -1;
+}
+
 function cifrepopolari(n){
-    let obj = {0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0};
+    let arr = [{n: 0, occ: 0}, {n: 1, occ: 0}, {n: 2, occ: 0}, {n: 3, occ: 0}, {n: 4, occ: 0}, {n: 5, occ: 0}, {n: 6, occ: 0}, {n: 7, occ: 0}, {n: 8, occ: 0}, {n: 9, occ: 0}];
     let sn = n.toString();
-    for(let i of sn){
-        if(i in obj)
-        obj[i]++;
-    }
-    let min = 0, max = 0
-    for(let i = 0; i < 10; i++){
-        
-    }
+    for(let i of sn) if(i != '.') arr[i].occ++;
+    arr.sort(mySort);
+    let obj = {}
+    obj[arr[0].n] = arr[0].occ;
+    obj[arr[arr.length - 1].n] = arr[arr.length - 1].occ;
     return obj;
 }
 

@@ -40,7 +40,7 @@ export class Matrix<T> {
         return {rows: this.rows, columns: this.columns};
     }
 
-    print(): void {
+    print() : void {
         for(let row of this.mainArr) console.log(row);
     }
 
@@ -91,8 +91,30 @@ export class Matrix<T> {
         for(let i = 0; i < this.rows; i++) for(let j = 0; j < this.columns; j++) if(this.mainArr[i][j]) newMatrix.insert(this.mainArr[i][j] as T, i, j);
         return newMatrix
     }
-}
 
-let m = new Matrix<number>(3,3);
-m.insert(1, undefined, 2)
-m.print()
+    expandColumn(n : number = 1) : void{
+        while(n > 0){
+            for(let i = 0; i < this.rows; i++) this.mainArr[i].push(this.init);
+            this.columns++;
+            n--;
+        }
+    }
+
+    expandRow(n : number = 1) : void{
+        while(n > 0){
+            let newRow : Array<T | undefined> = [];
+            for(let i = 0; i < this.columns; i++) newRow.push(this.init);
+            this.mainArr.push(newRow);
+            this.rows++;
+            n--;
+        }
+    }
+
+    expand(n : number = 1) : void{
+        while(n > 0){
+            this.expandColumn();
+            this.expandRow();
+            n--;
+        }
+    }
+}

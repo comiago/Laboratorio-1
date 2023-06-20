@@ -1,14 +1,27 @@
 import { Matrix } from "./Matrix";
 
-class Graph<T> extends Matrix<T>{
+class MatrixGraph<T> {
     private nodes : Array<T>;
+    private matrix : Matrix<T>;
 
-    constructor(n: number, init: T | undefined) {
-        super(n, n, init);
-        this.nodes = [];
-    }
-
-    insert(value : T, bind ?: Array<T>) : void {
-        this.nodes.push()
+    constructor(n : number, init ?: T, nodes ?: Array<T>) {
+        this.nodes = (nodes) ? nodes : [];
+        this.matrix = new Matrix(n, n, init);
     }
 }
+
+class ListGraph<T> {
+    private mainArr : Array<[T | number]>;
+
+    constructor(...nodes : Array<T>) {
+        this.mainArr = [];
+        for(let i of nodes) this.mainArr.push([i]);
+    }
+
+    print() : void{
+        for(let i of this.mainArr) console.log(i);
+    }
+}
+
+let g = new ListGraph<string>('a', 'b', 'c', 'd', 'e', 'f');
+g.print()
